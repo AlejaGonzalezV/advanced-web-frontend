@@ -1,25 +1,29 @@
 import React from "react";
-import User from "./User";
+import User from "./Users";
+import { connect } from "react-redux";
 
-const users = [
-  {
-    id: 1,
-    name: "Javier",
-  },
-  {
-    id: 2,
-    name: "Luis",
-  },
-];
-
-function UsersList() {
-  return (
-    <ul>
-      {users.map((user) => (
-        <User key={user.id} name={user.name} />
-      ))}
-    </ul>
-  );
+class UsersList extends React.Component {
+  render() {
+    const { users } = this.props;
+    return (
+      <ul>
+        {users.map((user) => (
+          <User key={user.id} name={user.name} />
+        ))}
+      </ul>
+    );
+  }
 }
 
-export default UsersList;
+const mapStateToProps = (state) => {
+  return {
+    users: state.users,
+  };
+};
+
+const mapDispatchToProps = () => {};
+
+const wrapper = connect(mapStateToProps, mapDispatchToProps);
+const component = wrapper(UsersList);
+
+export default component;

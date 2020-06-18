@@ -8,7 +8,9 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-redux": "^7.2.0",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -17,22 +19,27 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": ["react-app", "plugin:prettier/recommended"],
-    "rules":{
+    "extends": [
+      "react-app",
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
       "prettier/prettier": [
         "error",
         {
-          "endOfLine":"auto"
+          "endOfLine": "auto"
         }
       ],
-      "semi":[
-        "error","always"
+      "semi": [
+        "error",
+        "always"
       ],
       "no-console": [
         "error",
         {
           "allow": [
-            "warn","error"
+            "warn",
+            "error"
           ]
         }
       ]
