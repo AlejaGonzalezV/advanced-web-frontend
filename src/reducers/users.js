@@ -21,7 +21,8 @@ const users = (state = initialState, { type, payload }) => {
       return state;
 
     case DELETE_USER:
-      return state;
+      const newState2 = state.filter((user) => user.id !== payload);
+      return newState2;
 
     default:
       return state;

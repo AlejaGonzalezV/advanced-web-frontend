@@ -8,7 +8,7 @@ class UsersList extends React.Component {
     return (
       <ul>
         {users.map((user) => (
-          <User key={user.id} name={user.name} />
+          <User key={user.id} name={user.name} userId={user.id} />
         ))}
       </ul>
     );

@@ -1,9 +1,38 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { useState } from "react";
+//import { connect } from "react-redux";
 import { addUser } from "../actions";
+import { useDispatch } from "react-redux";
 
-//const AddUser = () => {};
+const AddUser = () => {
+  const dispatch = useDispatch();
+  const [name, setName] = useState("");
+  //const updateNameValue = () => {};
+  const onSubmit = (event) => {
+    event.preventDefault();
+    dispatch(
+      addUser({
+        id: Math.random(),
+        name: name,
+      })
+    );
+  };
+  return (
+    <form>
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        //onChange={updateNameValue}
+        onChange={(event) => setName(event.target.value)}
+      />
+      <input type="submit" onClick={onSubmit} />
+    </form>
+  );
+};
 
+export default AddUser;
+
+/*
 class AddUser extends React.Component {
   constructor() {
     super();
@@ -47,4 +76,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+
 export default connect(null, mapDispatchToProps)(AddUser);
+*/

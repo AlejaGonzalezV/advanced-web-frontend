@@ -1,17 +1,20 @@
 import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { deleteUser } from '../actions';
 
 function User(props) {
   const [color, setColor] = useState("#cccccc"); // ES6
-  const { name } = props;
+  const { name, userId } = props;
+  const dispatch = useDispatch();
 
   const onPressButton = () => {
-    setColor("#000");
+    dispatch(deleteUser(userId));
   };
 
   return (
     <li style={{ backgroundColor: color }}>
       {name}
-      <button onClick={onPressButton}>Change Color</button>
+      <button onClick={onPressButton}>Delete</button>
     </li>
   );
 }
