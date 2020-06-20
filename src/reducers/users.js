@@ -3,11 +3,11 @@ import { ADD_USER, UPDATE_USER, DELETE_USER } from "../actions";
 const initialState = [
   {
     id: 1,
-    name: "Javier",
+    name: "Lavar los platos",
   },
   {
     id: 2,
-    name: "Luis",
+    name: "Lavar la ropa",
   },
 ];
 

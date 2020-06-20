@@ -6,11 +6,15 @@ class UsersList extends React.Component {
   render() {
     const { users } = this.props;
     return (
-      <ul>
+      <div>
         {users.map((user) => (
-          <User key={user.id} name={user.name} userId={user.id} />
+          <div className="task-container">
+            <h3 className="task">
+              <User key={user.id} name={user.name} userId={user.id} />
+            </h3>
+          </div>
         ))}
-      </ul>
+      </div>
     );
   }
 }

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useDispatch } from 'react-redux';
-import { deleteUser } from '../actions';
+import { useDispatch } from "react-redux";
+import { deleteUser } from "../actions";
 
 function User(props) {
-  const [color, setColor] = useState("#cccccc"); // ES6
+  const [color, setColor] = useState("#FFFFFF"); // ES6
   const { name, userId } = props;
   const dispatch = useDispatch();
 
@@ -12,10 +12,14 @@ function User(props) {
   };
 
   return (
-    <li style={{ backgroundColor: color }}>
+    <div>
       {name}
-      <button onClick={onPressButton}>Delete</button>
-    </li>
+      <div className="button-container">
+        <button className="delete-button" onClick={onPressButton}>
+          Delete
+        </button>
+      </div>
+    </div>
   );
 }
 

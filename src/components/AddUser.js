@@ -19,13 +19,17 @@ const AddUser = () => {
   return (
     <form>
       <input
+        value = ""
         type="text"
-        placeholder="Name"
+        placeholder="New Task"
         value={name}
+        className="new-task"
         //onChange={updateNameValue}
         onChange={(event) => setName(event.target.value)}
       />
-      <input type="submit" onClick={onSubmit} />
+      <div className="send-container">
+        <input className="send-button" type="submit" onClick={onSubmit} />
+      </div>
     </form>
   );
 };
